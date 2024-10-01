@@ -3,7 +3,7 @@ fn main() {
     dbg!(
         program.clone(),
         parse_from_japanese(program.clone()),
-        kaku(parse_from_japanese(program.clone()),)
+        kaku(parse_from_japanese(program.clone()))
     );
 }
 
