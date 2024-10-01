@@ -2,7 +2,7 @@ fn main() {
     println!("Hello, world!");
 
     let program = parse_from_japanese("3を、4で、2を、割ったので、引く".to_string());
-    dbg!(program.clone(), nenia(program));
+    dbg!(program.clone(), kaku(program));
 }
 
 fn parse_from_japanese(source: String) -> String {
@@ -24,7 +24,7 @@ fn parse_from_japanese(source: String) -> String {
         .replace("で", ":w")
 }
 
-fn nenia(source: String) -> Option<f64> {
+fn kaku(source: String) -> Option<f64> {
     let mut way_stack: Vec<f64> = vec![];
     let mut obj_stack: Vec<f64> = vec![];
     let tokens = source.split_whitespace();
