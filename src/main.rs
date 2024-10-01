@@ -1,27 +1,6 @@
 fn main() {
-    println!("Hello, world!");
-
     let program = parse_from_japanese("3を、4で、2を、割ったので、引く".to_string());
     dbg!(program.clone(), kaku(program));
-}
-
-fn parse_from_japanese(source: String) -> String {
-    source
-        .replace("足したので", "add:aw")
-        .replace("足したのを", "add:a")
-        .replace("足す", "add:a")
-        .replace("引いたので", "sub:aw")
-        .replace("引いたのを", "sub:a")
-        .replace("引く", "sub:a")
-        .replace("掛けたので", "mul:aw")
-        .replace("掛けたのを", "mul:a")
-        .replace("掛ける", "mul:a")
-        .replace("割ったので", "div:aw")
-        .replace("割ったのを", "div:a")
-        .replace("割る", "div:a")
-        .replace("、", " ")
-        .replace("を", ":o")
-        .replace("で", ":w")
 }
 
 fn kaku(source: String) -> Option<f64> {
@@ -92,4 +71,23 @@ fn kaku(source: String) -> Option<f64> {
         // dbg!(&obj_stack, &way_stack);
     }
     obj_stack.pop()
+}
+
+fn parse_from_japanese(source: String) -> String {
+    source
+        .replace("足したので", "add:aw")
+        .replace("足したのを", "add:a")
+        .replace("足す", "add:a")
+        .replace("引いたので", "sub:aw")
+        .replace("引いたのを", "sub:a")
+        .replace("引く", "sub:a")
+        .replace("掛けたので", "mul:aw")
+        .replace("掛けたのを", "mul:a")
+        .replace("掛ける", "mul:a")
+        .replace("割ったので", "div:aw")
+        .replace("割ったのを", "div:a")
+        .replace("割る", "div:a")
+        .replace("、", " ")
+        .replace("を", ":o")
+        .replace("で", ":w")
 }
