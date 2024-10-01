@@ -1,6 +1,10 @@
 fn main() {
-    let program = parse_from_japanese("3を、4で、2を、割ったので、引く".to_string());
-    dbg!(program.clone(), kaku(program));
+    let program = "4で、2を、割ったので、3を、引いたのを、2で、掛ける".to_string();
+    dbg!(
+        program.clone(),
+        parse_from_japanese(program.clone()),
+        kaku(parse_from_japanese(program.clone()),)
+    );
 }
 
 fn kaku(source: String) -> Option<f64> {
